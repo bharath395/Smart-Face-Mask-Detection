@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Face Mask Detection - Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <header>
+    <h1>Face Mask Detection Dashboard</h1>
+    <nav>
+      <a href="{{ url_for('dashboard') }}" class="active">Dashboard</a>
+      <a href="{{ url_for('alerts_page') }}">Alerts</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="camera-section">
+      <h2>Live Camera Feed</h2>
+      <div class="camera-box">
+        <img src="{{ url_for('video_feed') }}" width="640" height="480" alt="Live Camera Feed" />
+      </div>
+      <div class="status">
+        <p>Status: <span id="mask-status">Detecting...</span></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

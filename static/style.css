@@ -1,0 +1,123 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #2e0854, #4b2c82); /* Gradient purple background */
+  color: #ddd;
+  min-height: 100vh;
+}
+
+header {
+  background: linear-gradient(135deg, #5a2a83, #7d3c98); /* Gradient purple header */
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+nav a.active, nav a:hover {
+  background: linear-gradient(135deg, #9b59b6, #ba68c8); /* Lighter purple gradient */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+main {
+  padding: 30px;
+}
+
+.camera-section, .alerts-section {
+  background: linear-gradient(135deg, #3e1f6b, #5a2a83); /* Dark purple gradient card */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+  margin-bottom: 30px;
+  border: 1px solid #7d3c98;
+}
+
+.camera-section h2, .alerts-section h2 {
+  color: #e1bee7;
+  margin-top: 0;
+  text-align: center;
+  font-size: 1.5em;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.camera-box {
+  background: #000;
+  width: 100%;
+  max-width: 640px;
+  height: 480px;
+  margin: 20px auto;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  border: 2px solid #9b59b6;
+}
+
+#camera {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.status {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+  color: #d1c4e9; /* Light purple */
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.alert-card {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #4b2c82, #5a2a83); /* Purple gradient alert card */
+  margin: 15px 0;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  border: 1px solid #7d3c98;
+  transition: transform 0.3s ease;
+}
+
+.alert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+
+.alert-card img {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+  margin-right: 20px;
+  border: 3px solid #9b59b6;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.alert-info p {
+  margin: 6px 0;
+  color: #e1bee7; /* Light purple text */
+  font-size: 16px;
+}
+
+.alert-info strong {
+  color: #ba68c8;
+}

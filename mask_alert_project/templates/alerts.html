@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Face Mask Detection - Alerts</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Face Mask Detection</h1>
+    <nav>
+      <a href="{{ url_for('dashboard') }}">Dashboard</a>
+      <a href="{{ url_for('alerts_page') }}" class="active">Alerts</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="alerts-section">
+      <h2>Recent Alerts</h2>
+      <div id="alerts-list">
+        <p>Loading alerts...</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <script>
+    function loadAlerts() {
+      fetch("{{ url_for('get_alerts') }}")
+        .then(res => res.json())
+        .then(data => {
+          const list = document.getElementById("alerts-list");
+          list.innerHTML = "";
+          if (data.length === 0) {
+            list.innerHTML = "<p>No alerts yet ✅</p>";
+            return;
+          }
+          data.slice().reverse().forEach(alert => {
+            list.innerHTML += `
+              <div class="alert-card">
+                <img src="{{ url_for('static', filename='') }}${alert.image}" alt="Alert Screenshot">
+                <div class="alert-info">
+                  <p><strong>Name:</strong> ${alert.name}</p>
+                  <p><strong>Year:</strong> ${alert.year}</p>
+                  <p><strong>Department:</strong> ${alert.dept}</p>
+                  <p><strong>Status:</strong> ${alert.status}</p>
+                  <p><strong>Time:</strong> ${alert.time}</p>
+                </div>
+              </div>
+            `;
+          });
+        })
+        .catch(err => {
+          console.error("Error loading alerts:", err);
+        });
+    }
+
+    // Load alerts initially
+    loadAlerts();
+
+    // Refresh every 5 seconds
+    setInterval(loadAlerts, 5000);
+  </script>
+</body>
+</html>

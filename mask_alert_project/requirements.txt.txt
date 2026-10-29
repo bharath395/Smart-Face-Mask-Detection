@@ -1,0 +1,9 @@
+tensorflow==2.10.0
+numpy==1.23.5
+opencv-python
+face-recognition
+keras
+matplotlib
+scikit-learn
+Pillow
+simpleaudio

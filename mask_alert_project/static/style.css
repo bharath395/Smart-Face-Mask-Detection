@@ -1,0 +1,85 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f5f6fa;
+  color: #333;
+}
+
+header {
+  background: #2c3e50;
+  color: #fff;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  padding: 6px 12px;
+  border-radius: 5px;
+}
+
+nav a.active, nav a:hover {
+  background: #3498db;
+}
+
+main {
+  padding: 20px;
+}
+
+.camera-section, .alerts-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.camera-box {
+  background: #000;
+  width: 100%;
+  max-width: 640px;
+  height: 480px;
+  margin: 10px auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#camera {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.status {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.alert-card {
+  display: flex;
+  align-items: center;
+  background: #f9f9f9;
+  margin: 10px 0;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.alert-card img {
+  width: 150px;
+  height: auto;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.alert-info p {
+  margin: 4px 0;
+}
